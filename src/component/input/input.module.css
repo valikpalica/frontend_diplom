@@ -1,0 +1,20 @@
+.Input{
+    font-size: 20px;
+    background: none;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    text-align: center;
+}
+.label{
+    width: 100%;
+    font-size: 20px;
+    margin-right: 5px;
+    text-align: center;
+}
+.centerElement{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,15 @@
+.Table{
+    border: 1px solid #fff;
+    padding: 20px;
+    font-size: 25px;
+    color: #fff;   
+}
+
+.Table  td, th {
+    margin: 0px;
+    padding: 10px;
+    border: 1px solid #fff;
+    max-width: 500px;
+    width: auto;
+    word-wrap: break-word;
+}

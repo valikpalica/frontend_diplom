@@ -1,0 +1,10 @@
+.ErrorBoundry{
+    text-align: center;
+    margin: 20% auto;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 20px 10px;
+    color: #fff;
+}

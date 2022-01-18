@@ -1,0 +1,13 @@
+.Link{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    padding: 0 20px 10px 20px;
+    transition: opacity .3s;
+}
+
+.Link:hover{
+    opacity: .7;
+    cursor: pointer;
+}

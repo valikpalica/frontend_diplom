@@ -1,0 +1,11 @@
+.Select{
+    background-color: #474F3F;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: 1.1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}

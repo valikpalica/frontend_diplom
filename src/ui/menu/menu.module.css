@@ -1,0 +1,27 @@
+.Menu{
+    position: fixed;
+    top: 10px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    padding: 10px 10px;
+    background-color: rgb(155, 150, 103);
+    transition: opacity, right .22s ease-in;
+    z-index: 100;
+}
+
+
+.Menu i {
+    color: #fff;
+    font-size: 15px;
+}
+
+.Menu:hover {
+   opacity: .7;
+}
+
+
+.Menu.open{
+    right: 300px;
+}

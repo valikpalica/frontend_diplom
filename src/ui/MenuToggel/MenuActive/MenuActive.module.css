@@ -1,0 +1,26 @@
+.MenuActive{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 10px;
+}
+
+.MenuActive  li{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+}
+/* .MenuActive  li a{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    padding: 0 20px 10px 20px;
+    transition: opacity .3s;
+}
+
+
+.MenuActive li a:hover{
+    opacity: .7;
+    cursor: pointer;
+} */
