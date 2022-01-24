@@ -6,7 +6,7 @@ const Select = (props) =>{
         <select className={classes.Select} onChange={props.CheckValue} value={props.defaultValue}>
             {props.array_option.map((item,index)=>{
                 return (<option value={item.id_type_anceta} key={index}>
-                    {item.type_anceta}
+                    {item.name}
                 </option>)
             })} 
         </select>

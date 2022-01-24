@@ -19,8 +19,8 @@ class Autorithation extends React.Component{
     };
     CheckAuth = async (navigate) =>{
         try {
-            let response = await axios.post('http://localhost:8000/autintificate/auth',this.state.auth);
-            console.log(response.data);
+            let response = await axios.post('http://localhost:8080/auth/auth',this.state.auth);
+            //console.log(response.data);
             localStorage.setItem('access_token',response.data.tokens.access_token);
             localStorage.setItem('refresh_token',response.data.tokens.refresh_token);
             this.props.onAuth();

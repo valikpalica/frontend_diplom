@@ -20,11 +20,11 @@ class Registration extends React.Component{
     }
     onRegistration = async (navigate) =>{
         try {
-            console.log(this.state.registration)
-            await axios.post('http://localhost:8000/autintificate/reg',this.state.registration);
+            //console.log(this.state.registration)
+            await axios.post('http://localhost:8080/auth/reg',this.state.registration);
             navigate(this.state.to);
         } catch (e) {
-            console.log(e.response.data)
+            //console.log(e.response.data)
             return 
         }
     }

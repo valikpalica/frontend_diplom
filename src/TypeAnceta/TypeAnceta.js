@@ -19,21 +19,35 @@ class TypeAnceta extends React.Component{
     }
 
     getTypeAnceta =  () =>{
-        axios.get('http://localhost:8000/autintificate/token',{
+        axios.get('http://localhost:8080/type_anceta/allAncetas',{
             headers:{'Authorization':`Bearer ${localStorage.getItem('access_token')}`}    
         }).then(response=>{
+            console.log(response.data.response.message);
+            let types_anceta = response.data.response.message
             this.setState({
+                types_anceta:types_anceta,
                 loader:false,
             })
         }).catch(e=>{
-            console.log(e.response.data);
-            axios.post('http://localhost:8000/autintificate/refresh',{
+            console.log(e);
+            axios.post('http://localhost:8080/auth/refresh',{
                 refreshToken:localStorage.getItem('refresh_token')
             }).then(res=>{ 
                 localStorage.setItem('access_token',res.data.access_token);
                 localStorage.setItem('refresh_token',res.data.refresh_token);
-                this.setState({
-                    loader:false
+            }).then(()=>{
+                console.log('refresh');
+                axios.get('http://localhost:8080/type_anceta/allAncetas',{
+                    headers:{'Authorization':`Bearer ${localStorage.getItem('access_token')}`}    
+                }).then(response=>{
+                    console.log(response.data.response.message);
+                    let types_anceta = response.data.response.message
+                    this.setState({
+                        types_anceta:types_anceta,
+                        loader:false,
+                    })
+                }).catch(e=>{
+                    console.log(e.response.data);
                 })
             }).catch(e=>{
                 console.log(e.response.data);
@@ -41,7 +55,7 @@ class TypeAnceta extends React.Component{
         })
     }
     OnSub = (navigate) =>{
-        console.log(this.state.type_anceta)
+        //console.log(this.state.type_anceta)
         navigate(`/test/${this.state.type_anceta}`)
     }
     CheckValue = (data) =>{
@@ -52,7 +66,6 @@ class TypeAnceta extends React.Component{
         }
     }
     render(){
-
         const element = this.state.loader ? <Spinner/> : (
             <div className={classes.TypeAncetaDiv}>
                 <h1>Виберіть акету</h1>

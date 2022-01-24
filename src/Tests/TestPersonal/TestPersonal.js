@@ -19,10 +19,12 @@ class TestPersonal extends React.Component{
         this.getQuastions();
     }
     getQuastions = () =>{
-        console.log(this.props.id_test);
-        axios.post('http://localhost:8080/page/anceta',{type_anceta:this.props.id_test}).then(response=>{
+        axios.post('http://localhost:8080/type_anceta/quiz',{type_anceta_id:this.props.id_test},{
+            headers:{'Authorization':`Bearer ${localStorage.getItem('access_token')}`}
+        }).then(response=>{
+            console.log(response.data.response.message);
             this.setState({loader:false,
-                quiz:response.data.answer
+                quiz:response.data.response.message
             })
         }).catch(e=>{
             console.log(e);
@@ -32,7 +34,7 @@ class TestPersonal extends React.Component{
         const {value} = event.target;
         const property_name = event.target.getAttribute('property_name');
         const id_element = event.target.getAttribute('id_elemet');
-        console.log(value,property_name,id_element);
+        //console.log(value,property_name,id_element);
         if(property_name==='quastions'){
             let obj = this.state.answers.quastions;
             obj[id_element] = value;
